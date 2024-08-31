@@ -11,5 +11,5 @@ public interface ProductPort {
 
     ProductDTO productBySku(int sku);
 
-    void productUpdateBySku(int sku, Product product);
+    void productUpdateBySku(int sku, ProductRequest product);
 }

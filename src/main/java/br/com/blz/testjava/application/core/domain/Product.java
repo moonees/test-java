@@ -11,6 +11,15 @@ public class Product {
     public Product(){
 
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSku(int sku) {
+        this.sku = sku;
+    }
+
     private Product(ProductBuilder builder){
         this.sku = builder.sku;
         this.name = builder.name;

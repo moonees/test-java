@@ -15,5 +15,5 @@ public interface IProductController {
 
     ResponseEntity<ProductDTO> productBySku(@RequestParam int sku);
 
-    ResponseEntity<String> productUpdateBySku(@PathVariable int sku, @RequestBody Product product);
+    ResponseEntity<String> productUpdateBySku(@PathVariable int sku, @RequestBody ProductRequest product);
 }

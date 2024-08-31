@@ -51,7 +51,7 @@ public class ProductUseCase implements ProductPort {
 
             response.getInventory().setQuantity(totalQuantity(response));
 
-            response.setMarketable(isMarketable(response.getInventory().getQuantity()));
+            response.setIsMarketable(isMarketable(response.getInventory().getQuantity()));
 
             return response;
         }catch (RuntimeException e){
@@ -60,7 +60,7 @@ public class ProductUseCase implements ProductPort {
     }
 
     @Override
-    public void productUpdateBySku(int sku, Product newProduct) {
+    public void productUpdateBySku(int sku, ProductRequest newProduct) {
         try {
             Product response = productSingleton.getProduct().stream()
                 .filter(product -> product.getSku() == sku)
@@ -68,7 +68,7 @@ public class ProductUseCase implements ProductPort {
 
             productSingleton.getProduct().remove(response);
 
-            productSingleton.getProduct().add(newProduct);
+            productSingleton.getProduct().add(productMapper.productRequestToProduct(newProduct));
 
         }catch (RuntimeException e){
             throw new ProductNotFoundException(String.format("Product not found whit sku %d", sku));

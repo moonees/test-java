@@ -8,6 +8,14 @@ public class ProductRequest {
 
     private InventoryRequest inventory;
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSku(int sku) {
+        this.sku = sku;
+    }
+
     public ProductRequest(){
 
     }

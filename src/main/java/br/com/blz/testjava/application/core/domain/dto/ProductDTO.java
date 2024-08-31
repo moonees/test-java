@@ -14,7 +14,7 @@ public class ProductDTO {
 
     }
 
-    public void setMarketable(Boolean marketable) {
+    public void setIsMarketable(Boolean marketable) {
         isMarketable = marketable;
     }
 
@@ -30,7 +30,7 @@ public class ProductDTO {
         return inventory;
     }
 
-    public Boolean getMarketable() {
+    public Boolean getIsMarketable() {
         return isMarketable;
     }
 

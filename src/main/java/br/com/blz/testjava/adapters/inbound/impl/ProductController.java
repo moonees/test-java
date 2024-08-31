@@ -38,13 +38,13 @@ public class ProductController implements IProductController {
 
         ProductDTO productDTO = productPort.productBySku(sku);
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(productDTO);
+        return ResponseEntity.status(HttpStatus.OK).body(productDTO);
 
     }
 
     @PutMapping(value = "/sku/{sku}")
     @Override
-    public ResponseEntity<String> productUpdateBySku(@PathVariable int sku, @RequestBody Product product){
+    public ResponseEntity<String> productUpdateBySku(@PathVariable int sku, @RequestBody ProductRequest product){
 
         productPort.productUpdateBySku(sku, product);
 
